@@ -1,0 +1,42 @@
+<section id="faq" class="faq-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <p class="section-subtitle">
+        Tudo o que você precisa saber sobre o PowerZen
+      </p>
+    </div>
+    
+    <dl class="accordion">
+      <div class="faq-item" 
+           [class.active]="isActive(i)" 
+           *ngFor="let faq of faqs; let i = index">
+        <dt>
+          <button class="faq-question" 
+                  (click)="toggleFaq(i)"
+                  [attr.aria-expanded]="isActive(i)">
+            <span class="question-text">{{ faq.question }}</span>
+            <span class="icon" [class.rotated]="isActive(i)">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </dt>
+        <dd class="faq-answer" [class.expanded]="isActive(i)">
+          <div class="answer-content">
+            <p>{{ faq.answer }}</p>
+          </div>
+        </dd>
+      </div>
+    </dl>
+    
+    <div class="faq-cta">
+      <p class="cta-text">Ainda tem dúvidas?</p>
+      <button class="btn btn-primary">
+        Entre em contato com nossa equipe de suporte
+      </button>
+    </div>
+  </div>
+</section>
+

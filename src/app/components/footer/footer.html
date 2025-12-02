@@ -1,0 +1,68 @@
+<footer id="contato" class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section brand-section">
+        <a href="#" class="footer-logo" (click)="scrollToSection('hero'); $event.preventDefault()">
+          <span class="logo-text">PowerZen</span>
+        </a>
+        <p class="brand-tagline">
+          Energia limpa e foco total para você alcançar seus objetivos.
+        </p>
+        <div class="social-links">
+          <a *ngFor="let social of socialLinks" 
+             [href]="social.url" 
+             [attr.aria-label]="social.name"
+             class="social-link">
+            <span>{{ social.icon }}</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">Links Rápidos</h3>
+        <ul class="footer-links">
+          <li *ngFor="let link of quickLinks">
+            <a [href]="link.href" (click)="scrollToSection(link.href.substring(1)); $event.preventDefault()">
+              {{ link.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">Produtos</h3>
+        <ul class="footer-links">
+          <li *ngFor="let product of products">
+            <span class="product-item">{{ product }}</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">Contato</h3>
+        <ul class="footer-links">
+          <li>
+            <a href="mailto:contato@powerzen.com">
+              📧 contato&#64;powerzen.com
+            </a>
+          </li>
+          <li>
+            <a href="tel:+5511999999999">
+              📱 (11) 99999-9999
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">
+        © {{ currentYear }} PowerZen. Todos os direitos reservados.
+      </p>
+      <p class="credits">
+        Desenvolvido por <strong>Júlia Caroline & Gabriel Cartaxo</strong>
+      </p>
+    </div>
+  </div>
+</footer>
+

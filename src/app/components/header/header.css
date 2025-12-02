@@ -1,0 +1,115 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-sticky);
+  background-color: transparent;
+  transition: all var(--transition-base);
+  padding-block: var(--space-3);
+}
+
+header.scrolled {
+  background-color: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(10px);
+  padding-block: var(--space-2);
+  box-shadow: var(--shadow-md);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--pz-white);
+  text-decoration: none;
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.logo-text {
+  background: linear-gradient(135deg, var(--pz-green-accent) 0%, var(--pz-green-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px var(--pz-glow));
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--pz-gray-light);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-base);
+  transition: all var(--transition-fast);
+  position: relative;
+  padding-block: var(--space-1);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pz-green-accent), var(--pz-green-light));
+  transition: width var(--transition-base);
+}
+
+.nav-links a:hover {
+  color: var(--pz-white);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .logo {
+    font-size: var(--fs-xl);
+  }
+  
+  .nav-links {
+    gap: var(--space-2);
+  }
+  
+  .nav-links a {
+    font-size: var(--fs-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: center;
+  }
+  
+  header {
+    padding-block: var(--space-2);
+  }
+  
+  header.scrolled {
+    padding-block: var(--space-1);
+  }
+  
+  .nav-links {
+    gap: var(--space-3);
+  }
+}
+

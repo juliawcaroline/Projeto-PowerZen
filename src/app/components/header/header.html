@@ -1,0 +1,26 @@
+<header [class.scrolled]="isScrolled()">
+  <nav class="container">
+    <a href="#" class="logo" (click)="scrollToSection('hero'); $event.preventDefault()">
+      <span class="logo-text">PowerZen</span>
+    </a>
+    
+    <ul class="nav-links">
+      <li>
+        <a href="#como-usar" (click)="scrollToSection('como-usar'); $event.preventDefault()">
+          Como Usar
+        </a>
+      </li>
+      <li>
+        <a href="#faq" (click)="scrollToSection('faq'); $event.preventDefault()">
+          FAQ
+        </a>
+      </li>
+      <li>
+        <a href="#contato" (click)="scrollToSection('contato'); $event.preventDefault()">
+          Contato
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+

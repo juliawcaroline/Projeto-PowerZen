@@ -1,0 +1,31 @@
+<section id="como-usar" class="steps-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Como Usar</h2>
+      <p class="section-subtitle">
+        Três passos simples para energia limpa e foco total
+      </p>
+    </div>
+    
+    <ol class="steps-list">
+      <li class="step-card" *ngFor="let step of steps; let i = index">
+        <article>
+          <div class="step-number">
+            <span>{{ step.number }}</span>
+          </div>
+          
+          <div class="step-icon">
+            {{ step.icon }}
+          </div>
+          
+          <h3 class="step-title">{{ step.title }}</h3>
+          
+          <p class="step-description">{{ step.description }}</p>
+          
+          <div class="step-connector" *ngIf="i < steps.length - 1"></div>
+        </article>
+      </li>
+    </ol>
+  </div>
+</section>
+
